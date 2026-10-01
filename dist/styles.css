@@ -1166,3 +1166,6 @@ html { scroll-padding-top: 60px; }
 .closing-install { display: inline-block; width: max-content; max-width: 100%; padding-bottom: 76px; }
 .install-scribble { top: 49px; right: auto; left: 50%; transform: translateX(-42%); }
 @media (max-width: 600px) { .install-scribble { right: auto; left: 50%; transform: translateX(-50%); } }
+/* Offset the note while leaving its arrow beneath the button's right edge. */
+.install-scribble { transform: translateX(-12%); }
+@media (max-width: 600px) { .install-scribble { transform: translateX(-35%); } }
