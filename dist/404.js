@@ -22,7 +22,7 @@
       const unseen = candidates.filter(p => !previous.has(p.id));
       if (candidates.length) picks.push(shuffled(unseen.length ? unseen : candidates)[0]);
     }
-    const remaining = unique.filter(p => !picks.some(pick => pick.id === p.id));
+    const remaining = unique.filter(p => !['viralgoose','-technify-'].includes(p.author.toLowerCase()));
     const fresh = shuffled(remaining.filter(p => !previous.has(p.id)));
     const older = shuffled(remaining.filter(p => previous.has(p.id)));
     const choices = shuffled([...picks, ...fresh, ...older].slice(0,cells.length));
@@ -59,6 +59,7 @@
       projects=Array.isArray(result.projects)?result.projects.filter(p=>Number.isSafeInteger(p.id)&&p.id>0&&typeof p.title==='string'&&typeof p.author==='string'):[];
       featured = Array.isArray(result.featured) ? result.featured : [];
       if(!projects.length) throw new Error('Empty feed');
+      projects = await window.selectProjectThumbnails(shuffled(projects), Math.min(projects.length, cells.length + 40));
       draw(); status.textContent='Hover to meet the creators. Click a thumbnail to play.';
     } catch { status.textContent='Scratch is taking a break. You can still head home, or try again.'; }
     finally {busy=false;refresh.disabled=false;}

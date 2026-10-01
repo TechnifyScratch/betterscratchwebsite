@@ -49,10 +49,14 @@
   }
   async function load() {
     try {
-      const response = await fetch('/api/gallery', {signal:AbortSignal.timeout(10000)});
+      const response = await fetch(`/api/gallery?batch=${Math.floor(Math.random()*16)}`, {signal:AbortSignal.timeout(10000)});
       if (!response.ok) throw new Error('Unavailable');
       const data = await response.json();
-      const projects = [...new Map((Array.isArray(data.projects) ? data.projects : []).filter(p => Number.isSafeInteger(p.id) && p.id > 0 && typeof p.title === 'string' && /^[\w-]{1,30}$/.test(p.author)).map(p => [p.id,p])).values()].slice(0,16);
+      let projects = [...new Map((Array.isArray(data.projects) ? data.projects : []).filter(p => Number.isSafeInteger(p.id) && p.id > 0 && typeof p.title === 'string' && /^[\w-]{1,30}$/.test(p.author)).map(p => [p.id,p])).values()];
+      for (let i=projects.length-1;i>0;i--) {
+        const j=Math.floor(Math.random()*(i+1)); [projects[i],projects[j]]=[projects[j],projects[i]];
+      }
+      projects = await window.selectProjectThumbnails(projects,16);
       if (!projects.length) throw new Error('No projects');
       const midpoint = Math.ceil(projects.length / 2);
       [projects.slice(0,midpoint),projects.slice(midpoint)].forEach((row,index) => {
