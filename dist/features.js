@@ -10,9 +10,20 @@ for (const button of featureButtons) button.addEventListener('click', () => {
   const feature = featureContent[selected];
   if (!feature) return;
   for (const option of featureButtons) option.setAttribute('aria-pressed', String(option === button));
-  const isShelf = selected === 'shelf';
-  document.getElementById('feature-preview').classList.toggle('has-feature-image', isShelf);
-  document.getElementById('showcase-photo').hidden = !isShelf;
+  const images = {
+    focus: { src: 'assets/feature-focus.png', alt: 'BetterScratch focus mode artwork featuring Orbi by -Technify-' },
+    appearance: { src: 'assets/feature-appearance.png', alt: 'BetterScratch appearance artwork showing night mode, day mode, and accent colors' },
+    shelf: { src: 'assets/feature-shelf.png', alt: 'BetterScratch project shelf artwork with saved project thumbnails' },
+    remix: { src: 'assets/feature-remix.png', alt: 'BetterScratch remix tree artwork showing Bjorne’s original project and connected remixes' },
+  };
+  const image = images[selected];
+  const photo = document.getElementById('showcase-photo');
+  document.getElementById('feature-preview').classList.toggle('has-feature-image', Boolean(image));
+  photo.hidden = !image;
+  if (image) {
+    photo.src = image.src;
+    photo.alt = image.alt;
+  }
   document.getElementById('showcase-art').className = `showcase-placeholder placeholder-${selected}`;
   document.getElementById('showcase-symbol').textContent = feature.symbol;
   document.getElementById('showcase-label').textContent = feature.title;
