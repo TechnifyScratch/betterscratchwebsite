@@ -128,7 +128,7 @@ summary:focus-visible {
 .eyebrow {
   font-size: 1rem;
   font-weight: 600;
-  color: #ad4a09;
+  color: var(--brand);
   margin: 0 0 25px;
 }
 .hero .eyebrow {
@@ -1107,3 +1107,36 @@ body.footer-visible::after { opacity: 0; }
 
 .primary, .stats-toolbar button[aria-pressed="true"] { color: #fff; }
 .primary .chrome-button-icon { filter: brightness(0) invert(1); }
+
+/* Only the closing install button gets motion. */
+.closing .install-link {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(110deg, #7020b8, #8624db, #aa4cef, #7020b8);
+  background-size: 300% 100%;
+  animation: install-gradient 7s ease-in-out infinite;
+  box-shadow: 0 6px 20px #8624db26;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.closing .install-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, #ffffff35 50%, transparent 70%);
+  transform: translateX(-140%);
+  transition: transform 650ms ease;
+}
+.closing .install-link:hover, .closing .install-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px #8624db40;
+}
+.closing .install-link:hover::after, .closing .install-link:focus-visible::after { transform: translateX(140%); }
+.closing .install-link:active { transform: translateY(-1px); }
+@keyframes install-gradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) {
+  .closing .install-link { animation: none; transition: none; }
+  .closing .install-link:hover, .closing .install-link:focus-visible { transform: none; }
+  .closing .install-link::after { display: none; }
+}
