@@ -1,0 +1,38 @@
+# BetterScratch
+
+> BetterScratch is an independent Chrome extension for Scratch. It adds themes, a project shelf, remix trees, public statistics, and homepage tools while keeping the Scratch editor untouched.
+
+BetterScratch is not affiliated with or endorsed by the Scratch Foundation or MIT. This file summarizes the project and links to its public documentation.
+
+## Website and documentation
+
+- [Homepage](https://betterscratch.org/): Feature overview, privacy information, and installation status.
+- [Documentation](https://betterscratch.org/docs.html): Installation, settings, project tools, public data, and permissions.
+- [Getting started](https://betterscratch.org/docs.html#getting-started): Development installation and update instructions.
+- [Appearance](https://betterscratch.org/docs.html#appearance): Themes, accents, homepage customization, and reduced motion.
+- [Project tools](https://betterscratch.org/docs.html#project-tools): Remix trees, distraction-free viewing, and saved projects.
+- [Public insights](https://betterscratch.org/docs.html#insights): Statistics coverage and community badges.
+- [Privacy](https://betterscratch.org/docs.html#privacy): Storage, permissions, and public API requests.
+- [Stats](https://betterscratch.org/stats.html): Public Scratch profile statistics and project discovery.
+- [About the developers](https://betterscratch.org/about.html): The developers are -Technify- and viralgoose.
+- [Website source](https://github.com/TechnifyScratch/betterscratchwebsite): The website's GitHub repository.
+
+## Features
+
+- Light and dark themes, including classic Scratch blue and purple variants.
+- A project shelf for saving projects on the user's device.
+- Remix trees for exploring relationships between projects.
+- Distraction-free project viewing.
+- Public profile insights and trending or popular project discovery.
+- Homepage tools, navigation shortcuts, and optional local visit history.
+- Community recognition badges based on BetterScratch's documented eligibility rules. These are not official Scratch verification.
+
+## Installation status
+
+The Chrome Web Store listing is not available yet. The website's Add to Chrome buttons currently open the Chrome Web Store homepage, not an extension listing. Development installation instructions are available in the documentation.
+
+## Privacy and statistics coverage
+
+BetterScratch does not collect usage analytics. Preferences use Chrome sync. Saved projects, banners, optional visit history, and public-data caches are stored locally. Public Scratch API requests do not send account cookies.
+
+Statistics use publicly available Scratch data and may cover a limited sample of projects or followers. They are not necessarily lifetime totals or worldwide rankings. The website labels its coverage. Scratch's published registered-account total is not a daily active-user count; BetterScratch's daily users are not measured.

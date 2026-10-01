@@ -10,6 +10,9 @@
     },
     "api/community.js": {
       "maxDuration": 10
+    },
+    "api/gallery.js": {
+      "maxDuration": 10
     }
   }
 }

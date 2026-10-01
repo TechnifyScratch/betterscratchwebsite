@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
 import handler from "../api/stats.js";
 import communityHandler from "../api/community.js";
+import galleryHandler from "../api/gallery.js";
 const root = resolve(import.meta.dirname, "../dist");
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -11,10 +12,11 @@ const types = {
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".md": "text/markdown; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
 };
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, "http://localhost");
-  if (["/api/stats", "/api/community"].includes(url.pathname)) {
+  if (["/api/stats", "/api/community", "/api/gallery"].includes(url.pathname)) {
     res.status = (status) => {
       res.statusCode = status;
       return res;
@@ -24,7 +26,7 @@ const server = http.createServer(async (req, res) => {
       res.end(JSON.stringify(data));
       return res;
     };
-    return (url.pathname === "/api/community" ? communityHandler : handler)(req, res);
+    return (url.pathname === "/api/gallery" ? galleryHandler : url.pathname === "/api/community" ? communityHandler : handler)(req, res);
   }
   try {
     const file = resolve(
@@ -42,8 +44,10 @@ const server = http.createServer(async (req, res) => {
     });
     res.end(data);
   } catch {
-    res.writeHead(404);
-    res.end("Not found");
+    if ((req.headers.accept || "").includes("text/html")) {
+      res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(await readFile(resolve(root, "404.html")));
+    } else { res.writeHead(404); res.end("Not found"); }
   }
 });
 server.listen(4173, "127.0.0.1", () =>

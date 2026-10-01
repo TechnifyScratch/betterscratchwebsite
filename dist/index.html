@@ -76,28 +76,20 @@
       <div class="feature-strip" role="img" aria-label="Themes and accents, Remix trees, Project shelf, Public insights, Your own homepage">
         <div class="feature-ribbon"><div class="feature-ribbon-track" aria-hidden="true"><div class="feature-ribbon-group"><span>Themes &amp; accents</span><span class="ribbon-emoji" aria-hidden="true">🎉</span><span>Remix trees</span><span class="ribbon-emoji" aria-hidden="true">✨</span><span>Project shelf</span><span class="ribbon-emoji" aria-hidden="true">🪿</span><span>Public insights</span><span class="ribbon-emoji" aria-hidden="true">🚀</span><span>Your own homepage</span><span class="ribbon-emoji" aria-hidden="true">🎨</span></div><div class="feature-ribbon-group"><span>Themes &amp; accents</span><span class="ribbon-emoji" aria-hidden="true">🎉</span><span>Remix trees</span><span class="ribbon-emoji" aria-hidden="true">✨</span><span>Project shelf</span><span class="ribbon-emoji" aria-hidden="true">🪿</span><span>Public insights</span><span class="ribbon-emoji" aria-hidden="true">🚀</span><span>Your own homepage</span><span class="ribbon-emoji" aria-hidden="true">🎨</span></div></div></div>
       </div>
-      <section class="community-section container" aria-labelledby="community-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">The community</p><h2 id="community-title">A lot of people. A lot of ideas.</h2></div>
-          <p>Made for the people who make things on Scratch.</p>
+      <section id="community" class="project-community" aria-labelledby="community-title">
+        <div class="section-heading container">
+          <div><p class="eyebrow">Made on Scratch</p><h2 id="community-title">There’s always something to play.</h2></div>
+          <p>Real projects. Made by Scratchers.<br>See something you like? Jump in.</p>
         </div>
-        <div class="community-cards">
-          <article class="community-card">
-            <p class="eyebrow">Scratch</p>
-            <div class="community-number" id="scratch-count">—</div>
-            <h3>Registered accounts</h3>
-            <p id="scratch-count-detail">Loading Scratch’s published total…</p>
-            <a href="https://scratch.mit.edu/statistics/" target="_blank" rel="noopener">Source: Scratch statistics ↗</a>
-          </article>
-          <article class="community-card extension-community">
-            <p class="eyebrow">BetterScratch</p>
-            <div class="community-number community-unavailable">Not measured</div>
-            <h3>Daily extension users</h3>
-            <p>We don’t track your usage, so we don’t have a daily user count to share.</p>
-            <a href="#privacy">How we handle privacy ↗</a>
-          </article>
+        <div class="project-parade" aria-label="Projects from Scratch creators">
+          <div class="parade-row parade-right"><div class="parade-track" id="parade-top"></div></div>
+          <div class="parade-row parade-left"><div class="parade-track" id="parade-bottom"></div></div>
         </div>
-        <p class="community-note">Scratch doesn’t publish a daily active-user count in its public statistics.</p>
+        <p class="parade-status container" id="parade-status" role="status">Finding a few projects…</p>
+        <div class="parade-credit container">
+          <a class="scratcher-terminal" href="about.html" aria-label="Built by Scratchers — meet the developers"><span class="terminal-prompt" aria-hidden="true">&gt;</span><span class="terminal-typed" aria-hidden="true">Built by Scratchers</span><span class="terminal-cursor" aria-hidden="true">_</span></a>
+          <a href="stats.html">Find more projects ↗</a>
+        </div>
       </section>
       <section
         class="features-section"
@@ -307,7 +299,8 @@
       <a href="about.html">About the devs</a
       ><a href="docs.html">Documentation</a><a href="https://forms.gle/xcfbubxJ4iKV8ofT6" target="_blank" rel="noopener noreferrer">Join the team ↗</a><span>Version 0.2.0</span>
     </footer>
-    <script src="community.js" defer></script>
+    <script src="project-parade.js" defer></script>
+    <script src="terminal.js" defer></script>
     <script src="features.js" defer></script>
     <script src="footer-blur.js" defer></script>
     <script src="navigation.js" defer></script>
