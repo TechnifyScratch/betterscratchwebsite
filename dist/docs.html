@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="BetterScratch documentation: installation, project tools, customization, public insights, privacy, and development."
+    />
+    <meta name="theme-color" content="#f79232" />
+    <title>Documentation — BetterScratch</title>
+    <link rel="icon" type="image/png" href="assets/brand-purple.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="BetterScratch home"
+          ><img
+            src="assets/brand-purple.png"
+            alt=""
+            width="36"
+            height="36"
+          />BetterScratch</a
+        >
+        <nav aria-label="Main navigation">
+          <a href="index.html#features">Features</a
+          ><a href="stats.html">Stats</a
+          ><a href="docs.html" aria-current="page">Docs</a
+          ><a href="index.html#privacy">Privacy</a>
+          <a href="about.html">Devs</a>
+        </nav>
+        <a
+          class="button primary install-link"
+          href="https://chromewebstore.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            class="chrome-button-icon"
+            src="assets/chrome.svg"
+            width="18"
+            height="18"
+            alt=""
+            aria-hidden="true"
+          />Add to Chrome</a
+        >
+      </div>
+    </header>
+    <main class="container docs-layout">
+      <nav class="docs-sidebar" aria-label="Documentation sections">
+        <strong>DOCUMENTATION</strong
+        ><a href="#getting-started">Getting started</a
+        ><a href="#appearance">Appearance &amp; homepage</a
+        ><a href="#project-tools">Project tools</a
+        ><a href="#insights">Statistics &amp; badges</a
+        ><a href="#discovery">Finding projects</a
+        ><a href="#preferences">Preferences</a
+        ><a href="#privacy">Privacy &amp; permissions</a
+        ><a href="#troubleshooting">Troubleshooting</a
+        ><a href="#development">Development</a
+        ><a href="#reference">Reference docs</a>
+      </nav>
+      <article class="docs-content">
+        <p class="eyebrow">BetterScratch / Docs / 0.2.0</p>
+        <h1>BetterScratch docs.</h1>
+        <p>
+          Install BetterScratch, adjust your settings, and find out how the
+          features work.
+        </p>
+        <section id="getting-started">
+          <h2>Getting started</h2>
+          <p class="doc-note">
+            The Chrome Web Store listing is coming soon. The website’s Add to
+            Chrome buttons currently open the Store homepage. They don’t install
+            the extension yet.
+          </p>
+          <h3>Install the current development version</h3>
+          <ol>
+            <li>
+              Use a BetterScratch release ZIP, or build the extension from its
+              source. Unzip a release into a permanent folder.
+            </li>
+            <li>
+              Open <code>chrome://extensions</code> in Chrome and enable
+              <strong>Developer mode</strong>.
+            </li>
+            <li>
+              Choose <strong>Load unpacked</strong> and select the extracted
+              folder containing <code>manifest.json</code>. If you built from
+              source, select <code>dist/</code> inside the extension project.
+            </li>
+            <li>
+              Refresh your Scratch tabs. Open BetterScratch’s toolbar popup and
+              choose <strong>Open workbench</strong> to adjust your preferences.
+            </li>
+          </ol>
+          <h3>Update an existing installation</h3>
+          <p>
+            Replace the extension files, reload its card at
+            <code>chrome://extensions</code>, and refresh your Scratch tabs.
+            Chrome may ask you to approve access to
+            <code>api.scratch.mit.edu</code> for public-data features.
+          </p>
+        </section>
+        <section id="appearance">
+          <h2>Appearance &amp; homepage</h2>
+          <p>
+            BetterScratch refreshes the homepage, project pages, profiles,
+            studios, messages, My Stuff, and Search/Explore. Its styling stays
+            out of the Scratch editor.
+          </p>
+          <ul>
+            <li>
+              <strong>Themes:</strong> choose Light, Dark, or System. New
+              installations default to Dark; saved preferences are preserved.
+            </li>
+            <li><strong>Accents:</strong> choose Orange, Blue, or Teal.</li>
+            <li>
+              <strong>Density:</strong> choose Comfortable or Compact spacing.
+            </li>
+            <li>
+              <strong>uWidget:</strong> select Welcome, Statistics, Activity,
+              Continue, Custom, or Hidden. Choose a compact or expanded height.
+            </li>
+            <li>
+              <strong>Sidebar:</strong> use the homepage navigation and
+              dashboards for overview, project rankings, engagement, and your
+              shelf. Collapse it when you need room. It hides on narrower
+              screens.
+            </li>
+          </ul>
+          <p>
+            Activity and Continue use optional local project-page visit history.
+            They don’t represent project edits or successful saves.
+          </p>
+        </section>
+        <section id="project-tools">
+          <h2>Project tools</h2>
+          <h3>Remix tree</h3>
+          <p>
+            Open Remix tree beside the native Remix button to explore a
+            project’s public remix relationships in a separate tab. Browse
+            branches, follow parent/original projects, and open project
+            thumbnails. Branches load as you explore, with pagination for larger
+            sets.
+          </p>
+          <p>
+            Public-data access must be enabled. Private and deleted projects,
+            missing API results, and complete historical trees may not be
+            available.
+          </p>
+          <h3>Distraction-free viewing</h3>
+          <p>
+            Use the focus icon after Copy Link to hide surrounding notes and
+            lower-page content. Select it again to exit. Scratch’s original
+            player and fullscreen control remain available.
+          </p>
+          <h3>Save to shelf</h3>
+          <p>
+            Select the bookmark icon after Copy Link to save a project link
+            locally. A check indicates it’s on your shelf. Select it again to
+            remove the link. Find saved projects on the homepage and in the
+            workbench.
+          </p>
+          <p>
+            The shelf holds up to 100 links. Adding beyond that limit drops the
+            oldest saved link. Saving doesn’t favorite, share, change, or delete
+            the original Scratch project.
+          </p>
+          <h3>Scratch News</h3>
+          <p>
+            BetterScratch announcements are shown alongside native Scratch News.
+            Scratch’s own news items remain available.
+          </p>
+        </section>
+        <section id="insights">
+          <h2>Statistics &amp; badges</h2>
+          <h3>Public insights</h3>
+          <p>
+            Profiles, the Statistics uWidget, and the homepage dashboard can
+            show public project counts, follower information, views, loves,
+            favorites, and remixes. Look for the displayed coverage and source
+            timestamp.
+          </p>
+          <p>
+            Each snapshot reads up to 40 public projects. For larger accounts,
+            engagement is a sample and the project count is a lower bound.
+            Follower totals are exact only below the first-page limit; larger
+            accounts show confirmed lower bounds. Unavailable data is marked
+            unavailable.
+          </p>
+          <p>
+            Statistics cache for five minutes; profile and verification lookups
+            cache for one hour. Newly observed followers are changes in a
+            sampled list over seven days. The first check establishes a local
+            baseline; these aren’t confirmed follow dates.
+          </p>
+          <h3>Community recognition</h3>
+          <p>
+            BetterScratch badges recognize Scratch Team accounts using Scratch’s
+            API flag, accounts with a confirmed 1,001st follower, and selected
+            community accounts <strong>viralgoose</strong> and
+            <strong>-technify-</strong>. Exactly 1,000 followers doesn’t
+            qualify.
+          </p>
+          <p>
+            Tooltips and accessible labels explain each qualifying reason.
+            Badges are BetterScratch recognition—not official Scratch
+            verification, proof of identity, or an endorsement. Biographies and
+            self-described roles aren’t used as evidence.
+          </p>
+        </section>
+        <section id="discovery">
+          <h2>Finding projects</h2>
+          <h3>Trending and popular projects</h3>
+          <p>
+            Open Trending projects in the extension’s homepage sidebar or
+            workbench Statistics section. Choose Trending or Popular and keep
+            Scratch’s order, or sort the first 40 returned projects by views,
+            loves, or favorites. These are rankings within the loaded list, not
+            global or country user leaderboards.
+          </p>
+          <p>
+            The website Stats tab lets you look up public profiles and browse
+            the same feeds. A cached Vercel function reads the public API. It
+            doesn’t store a database of accounts or produce global or country
+            user rankings.
+          </p>
+          <p>
+            Search, Explore, and My Stuff have a title filter and live counts
+            for projects already loaded on the page. Newly loaded results are
+            included automatically.
+          </p>
+          <p>
+            The filter doesn’t search every project on Scratch or fetch your
+            private inventory. Use Scratch’s original sorting and load-more
+            controls to expand the results you’re browsing.
+          </p>
+        </section>
+        <section id="preferences">
+          <h2>Preferences</h2>
+          <p>
+            Open the extension popup, then the workbench. Its live appearance
+            preview lets you choose themes, accents, spacing, and widget
+            options. Individual switches control the page upgrades, project
+            tools, shelf, public data, badges, and history.
+          </p>
+          <p>
+            Export preferences as JSON to keep a backup, or import a
+            BetterScratch version 1 preference file. Reset restores defaults.
+            Saved theme preferences remain in effect until you change or reset
+            them. Reduced motion is available, and the main power switch turns
+            BetterScratch off.
+          </p>
+          <p>
+            Preferences use Chrome sync. Project links and visit history stay
+            local to the device.
+          </p>
+        </section>
+        <section id="privacy">
+          <h2>Privacy &amp; permissions</h2>
+          <ul>
+            <li>
+              <strong>Storage:</strong> saves preferences, your local project
+              shelf, visit history, banners, and caches.
+            </li>
+            <li>
+              <strong>Public API access:</strong> reads from
+              <code>https://api.scratch.mit.edu/*</code>. Requests omit account
+              cookies and credentials.
+            </li>
+            <li>
+              <strong>Scratch pages:</strong> the content script runs on
+              <code>https://scratch.mit.edu/*</code>; editor, embed, and
+              fullscreen routes are excluded from the redesign.
+            </li>
+          </ul>
+          <p>
+            No analytics, third-party statistics service, account tokens, remote
+            code, or project-file changes. Visit history is off by default.
+            Public-data features and badges can be disabled independently.
+          </p>
+          <p>
+            The extension doesn’t read private project data. Different Scratch
+            accounts sharing a browser profile can share its device-local shelf
+            and visit history.
+          </p>
+        </section>
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+          <h3>Changes aren’t showing</h3>
+          <p>
+            Reload BetterScratch at <code>chrome://extensions</code>, then
+            refresh the Scratch page. Check that BetterScratch and the relevant
+            feature switch are enabled. Unknown page layouts may receive badges
+            only, without restyling.
+          </p>
+          <h3>Statistics or remix branches won’t load</h3>
+          <p>
+            Check that public-data access is enabled and Chrome has granted API
+            host permission. Network failures and rate limits can make data
+            unavailable. Use the tree’s retry control when offered, or try again
+            later.
+          </p>
+          <h3>A badge is missing</h3>
+          <p>
+            A failed lookup doesn’t produce a badge. Cached results may lag
+            account changes. Avatar-only links, editable inputs, plain comment
+            prose, and inline mentions inside descriptions are intentionally
+            excluded.
+          </p>
+          <h3>Something looks different in the editor</h3>
+          <p>
+            BetterScratch excludes editor routes and editor DOM. If another
+            extension changes the editor, review that extension’s settings
+            separately. Some native and third-party controls retain their own
+            appearance.
+          </p>
+        </section>
+        <section id="development">
+          <h2>Development</h2>
+          <p>
+            The extension and website are separate projects. The website uses
+            HTML, CSS, browser JavaScript, and one Vercel API function; the
+            extension uses React, TypeScript, and Vite.
+          </p>
+          <h3>Extension</h3>
+          <p>
+            Run these commands from the BetterScratch extension folder. Node.js
+            22.20 or later is recommended.
+          </p>
+          <pre><code>npm ci
+npm run dev
+npm run check
+npm run package</code></pre>
+          <p>
+            <code>npm run check</code> runs lint, tests, TypeScript checks,
+            production builds, and the bundled smoke check.
+            <code>npm run package</code> creates an installable release ZIP.
+            Development previews are at <code>/settings.html</code> and
+            <code>/popup.html</code>; they don’t exercise Chrome extension APIs.
+          </p>
+          <h3>Website</h3>
+          <p>
+            Run this from the <code>website</code> folder, then open
+            <code>http://127.0.0.1:4173</code>.
+          </p>
+          <pre><code>npm run dev</code></pre>
+          <p>
+            Edit pages and assets in <code>dist/</code> and the stats function
+            in <code>api/stats.js</code>. Use Node.js 22 or later. To host on
+            Vercel, import the website’s GitHub repository. Use
+            <strong>Other</strong> as the framework and <strong>dist</strong> as
+            the output directory; <code>vercel.json</code> skips building and
+            installation. For a larger repository, select
+            <code>website</code> as the root directory.
+          </p>
+        </section>
+        <section id="reference">
+          <h2>Reference docs</h2>
+          <p>
+            Read the project’s technical documentation and remaining release
+            checks. These are Markdown files included with this website.
+          </p>
+          <div class="resource-list">
+            <a href="docs/compatibility.md" download
+              >Feature coverage &amp; limitations (.md)</a
+            ><a href="docs/architecture.md" download
+              >Architecture &amp; lifecycle (.md)</a
+            ><a href="docs/release-qa.md" download
+              >Release QA checklist (.md)</a
+            >
+          </div>
+          <p>
+            BetterScratch is independent and is not affiliated with Scratch
+            Foundation or MIT.
+          </p>
+        </section>
+      </article>
+    </main>
+    <footer class="container footer">
+      <a class="brand" href="index.html"
+        ><img
+          src="assets/brand-purple.png"
+          alt=""
+          width="28"
+          height="28"
+        />BetterScratch</a
+      >
+      <p>
+        An independent extension. Not affiliated with Scratch Foundation or MIT.
+      </p>
+      <a href="about.html">About the devs</a
+      ><a href="docs.html">Documentation</a><span>Version 0.2.0</span>
+    </footer>
+    <script src="footer-blur.js" defer></script>
+  </body>
+</html>

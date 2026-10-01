@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Look up public Scratch profiles and browse trending and popular projects."
+    />
+    <meta name="theme-color" content="#f79232" />
+    <title>Scratch Stats — BetterScratch</title>
+    <link rel="icon" type="image/png" href="assets/brand-purple.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="stats.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html"
+          ><img
+            src="assets/brand-purple.png"
+            alt=""
+            width="36"
+            height="36"
+          />BetterScratch</a
+        >
+        <nav aria-label="Main navigation">
+          <a href="index.html#features">Features</a
+          ><a href="stats.html" aria-current="page">Stats</a
+          ><a href="docs.html">Docs</a><a href="index.html#privacy">Privacy</a>
+          <a href="about.html">Devs</a>
+        </nav>
+        <a
+          class="button primary"
+          href="https://chromewebstore.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            class="chrome-button-icon"
+            src="assets/chrome.svg"
+            width="18"
+            height="18"
+            alt=""
+            aria-hidden="true"
+          />Add to Chrome</a
+        >
+      </div>
+    </header>
+    <main class="container stats-page">
+      <p class="eyebrow">Scratch / Public stats</p>
+      <h1>See what’s happening.</h1>
+      <p>Look up a Scratcher or find your next favorite project.</p>
+      <div class="stats-toolbar" role="group" aria-label="Stats view">
+        <button data-view="user" aria-pressed="true">Profile stats</button
+        ><button data-view="explore" aria-pressed="false">
+          Trending &amp; popular
+        </button>
+      </div>
+      <form id="user-form" class="stats-controls">
+        <label for="username"
+          >Scratch username<input
+            id="username"
+            name="username"
+            placeholder="Enter a username"
+            maxlength="30"
+            pattern="[A-Za-z0-9_-]{1,30}"
+            required
+            autocomplete="off" /></label
+        ><button class="button primary" type="submit">Look up</button>
+      </form>
+      <div id="feed-controls" class="stats-controls" hidden>
+        <label for="feed"
+          >Projects<select id="feed">
+            <option value="trending">Trending</option>
+            <option value="popular">Popular</option>
+          </select></label
+        >
+      </div>
+      <div class="stats-controls">
+        <label for="sort"
+          >Project order<select id="sort">
+            <option value="scratch">Scratch order</option>
+            <option value="views">Views</option>
+            <option value="loves">Loves</option>
+            <option value="favorites">Favorites</option>
+          </select></label
+        >
+      </div>
+      <div id="stats-status" class="stats-message" role="status">
+        Enter a username to see public stats.
+      </div>
+      <button id="retry" class="button secondary" type="button" hidden>
+        Try again
+      </button>
+      <section
+        id="stats-results"
+        class="stats-result"
+        aria-label="Scratch stats results"
+        aria-busy="false"
+      ></section>
+      <p class="stats-footer-note">
+        Data comes from Scratch’s public API and is cached for five minutes.
+        Profile stats cover up to 40 public projects; larger accounts show a
+        sample. Follower counts above this sample are shown as lower bounds.
+        Project ranks apply to the loaded list. Global and country user rankings
+        aren’t available here.
+      </p>
+    </main>
+    <footer class="container footer">
+      <a class="brand" href="index.html"
+        ><img
+          src="assets/brand-purple.png"
+          alt=""
+          width="28"
+          height="28"
+        />BetterScratch</a
+      >
+      <p>
+        An independent extension. Not affiliated with Scratch Foundation or MIT.
+      </p>
+      <a href="about.html">About the devs</a
+      ><a href="docs.html">Documentation</a><span>Version 0.2.0</span>
+    </footer>
+    <script src="footer-blur.js" defer></script>
+  </body>
+</html>
