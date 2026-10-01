@@ -1169,3 +1169,7 @@ html { scroll-padding-top: 60px; }
 /* Offset the note while leaving its arrow beneath the button's right edge. */
 .install-scribble { transform: translateX(-12%); }
 @media (max-width: 600px) { .install-scribble { transform: translateX(-35%); } }
+
+.showcase-photo { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.showcase-photo[hidden] { display: none; }
+.showcase-media.has-feature-image .showcase-placeholder, .showcase-media.has-feature-image .showcase-media-caption { display: none; }

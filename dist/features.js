@@ -10,6 +10,9 @@ for (const button of featureButtons) button.addEventListener('click', () => {
   const feature = featureContent[selected];
   if (!feature) return;
   for (const option of featureButtons) option.setAttribute('aria-pressed', String(option === button));
+  const isShelf = selected === 'shelf';
+  document.getElementById('feature-preview').classList.toggle('has-feature-image', isShelf);
+  document.getElementById('showcase-photo').hidden = !isShelf;
   document.getElementById('showcase-art').className = `showcase-placeholder placeholder-${selected}`;
   document.getElementById('showcase-symbol').textContent = feature.symbol;
   document.getElementById('showcase-label').textContent = feature.title;
