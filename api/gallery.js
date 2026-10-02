@@ -1,3 +1,4 @@
+import {filterThumbnails} from '../lib/thumbnail-filter.js';
 // Fixed public Scratch feeds, with a rolling five-year creation-date window.
 export function recentProjects(raw, now = new Date()) {
   const cutoff = new Date(now);
@@ -18,6 +19,7 @@ export default async function handler(req,res) {
   res.setHeader('X-Content-Type-Options','nosniff');
   if(req.method !== 'GET') { res.setHeader('Allow','GET'); return res.status(405).json({error:'Use GET.'}); }
   try {
+    const deadline = Date.now() + 8500;
     // A bounded set of cacheable batches samples different public feed pages.
     const url = new URL(req.url, 'https://betterscratch.org');
     const seed = Number(url.searchParams.get('batch') || 0);
@@ -40,8 +42,11 @@ export default async function handler(req,res) {
       } catch { return []; }
     }));
     const featured = recentProjects(feeds.slice(-2).flat());
-    const projects = recentProjects(feeds.flat());
-    if (!projects.length) throw new Error('Scratch feeds unavailable');
+    const all = recentProjects(feeds.flat());
+    // Rotate the candidate order per cacheable batch, including one eligible project per developer.
+    const ordered = [...featured, ...all.filter(p => !featured.some(f => f.id===p.id))];
+    const projects = await filterThumbnails(ordered,deadline);
+    if (projects.length < 54) throw new Error('Scratch feeds unavailable');
     res.setHeader('Cache-Control','public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
     return res.status(200).json({projects,featured:featured.map(p=>p.id)});
   } catch { return res.status(502).json({error:'Scratch projects are unavailable right now. Try again shortly.'}); }

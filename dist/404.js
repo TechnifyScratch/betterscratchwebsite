@@ -59,7 +59,18 @@
       projects=Array.isArray(result.projects)?result.projects.filter(p=>Number.isSafeInteger(p.id)&&p.id>0&&typeof p.title==='string'&&typeof p.author==='string'):[];
       featured = Array.isArray(result.featured) ? result.featured : [];
       if(!projects.length) throw new Error('Empty feed');
-      projects = await window.selectProjectThumbnails(shuffled(projects), Math.min(projects.length, cells.length + 40));
+      const candidates = shuffled(projects);
+      const developerNames = ['viralgoose','-technify-'];
+      const selected = await Promise.all([
+        ...developerNames.map(name => window.selectProjectThumbnails(candidates.filter(p => p.author.toLowerCase()===name),1)),
+        window.selectProjectThumbnails([
+          ...candidates.filter(p => !developerNames.includes(p.author.toLowerCase()) && !previous.has(p.id)),
+          ...candidates.filter(p => !developerNames.includes(p.author.toLowerCase()) && previous.has(p.id))
+        ],cells.length)
+      ]);
+      const checked = selected.flat();
+      if (checked.length < cells.length) throw new Error('Not enough inspectable thumbnails');
+      projects = checked;
       draw(); status.textContent='Hover to meet the creators. Click a thumbnail to play.';
     } catch { status.textContent='Scratch is taking a break. You can still head home, or try again.'; }
     finally {busy=false;refresh.disabled=false;}

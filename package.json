@@ -8,5 +8,8 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "test": "node --test tests/*.check.mjs"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
   }
 }
