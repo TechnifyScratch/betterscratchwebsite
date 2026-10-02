@@ -13,6 +13,7 @@ BetterScratch is not affiliated with or endorsed by the Scratch Foundation or MI
 - [Project tools](https://betterscratch.org/docs.html#project-tools): Remix trees, distraction-free viewing, and saved projects.
 - [Public insights](https://betterscratch.org/docs.html#insights): Statistics coverage and community badges.
 - [Privacy](https://betterscratch.org/docs.html#privacy): Storage, permissions, and public API requests.
+- [Verification](https://betterscratch.org/verification.html): Automatic badge requirements and community verification applications for accounts at least one year old.
 - [Stats](https://betterscratch.org/stats.html): Public Scratch profile statistics and project discovery.
 - [About the developers](https://betterscratch.org/about.html): The developers are -Technify- and viralgoose.
 - [Website source](https://github.com/TechnifyScratch/betterscratchwebsite): The website's GitHub repository.

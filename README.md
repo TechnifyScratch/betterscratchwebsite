@@ -1,5 +1,7 @@
 # BetterScratch website
 
+Public website: [betterscratch.org](https://betterscratch.org/).
+
 A website for BetterScratch with static pages and a small cached Vercel stats API. No database, third-party paid service, API key, or dependency installation is required. Use a free Vercel Hobby account for personal/non-commercial hosting. Hobby usage caps can make the site unavailable; do not upgrade to Pro or add paid services if you want to avoid charges.
 
 ## Edit and preview
@@ -7,6 +9,7 @@ A website for BetterScratch with static pages and a small cached Vercel stats AP
 - Page content: `dist/index.html`
 - Stats: `dist/stats.html`, `dist/stats.js`, and `api/stats.js`
 - Developer page: `dist/about.html`
+- Verification requirements and application link: `dist/verification.html`
 - Documentation: `dist/docs.html`
 - Reference documentation downloads: `dist/docs/`
 - Styling: `dist/styles.css`

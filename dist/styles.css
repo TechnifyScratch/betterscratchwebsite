@@ -1274,3 +1274,6 @@ html { scroll-padding-top: 60px; }
 .scratcher-credit:hover strong { color: var(--brand); }
 .scratcher-credit:focus-visible { outline: 2px solid var(--brand); outline-offset: 5px; border-radius: 8px; }
 @media (max-width: 600px) { .parade-credit { gap: 14px; } .scratcher-credit { gap: 12px; } }
+
+.verification-page .dev-card p:not(.eyebrow) { color: #666; line-height: 1.7; }
+.verification-page .dev-card strong { color: var(--ink); }
