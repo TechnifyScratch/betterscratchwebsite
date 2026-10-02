@@ -1268,10 +1268,7 @@ html { scroll-padding-top: 60px; }
 @media (prefers-reduced-motion: reduce) { .parade-track { animation: none; } .parade-row { overflow-x: auto; mask-image: none; } .parade-group + .parade-group { display: none; } .parade-card { transition: none; } }
 
 .parade-credit { padding-top: 22px; border-top: 1px solid #e9e3ef; }
-.scratcher-credit { display: inline-flex; align-items: center; gap: 16px; color: var(--text); text-decoration: none; padding: 8px 0; }
-.scratcher-faces { display: flex; flex-shrink: 0; padding-right: 6px; }
-.scratcher-faces img { display: block; width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; object-fit: cover; background: #eee7f7; }
-.scratcher-faces img + img { margin-left: -12px; }
+.scratcher-credit { max-width: 760px; display: inline-flex; align-items: center; gap: 16px; color: var(--text); text-decoration: none; padding: 8px 0; }
 .scratcher-credit strong { display: block; font-size: clamp(20px,2.2vw,28px); font-weight: 750; letter-spacing: -.045em; line-height: 1.25; }
 .scratcher-credit small { display: block; margin-top: 5px; font-size: 13px; color: var(--muted); }
 .scratcher-credit:hover strong { color: var(--brand); }
