@@ -433,6 +433,23 @@ details p {
   margin: 22px 0 28px;
   line-height: 1.6;
 }
+.free-gradient {
+  color: #7c3aed;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .free-gradient {
+    background: linear-gradient(90deg, #b794f6, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+@media (forced-colors: active) {
+  .free-gradient {
+    background: none;
+    color: CanvasText;
+  }
+}
 .footer {
   border-top: 1px solid var(--line);
   display: flex;
