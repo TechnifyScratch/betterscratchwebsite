@@ -30,7 +30,7 @@ BetterScratch is not affiliated with or endorsed by the Scratch Foundation or MI
 
 ## Installation status
 
-The Chrome Web Store listing is not available yet. The website's Add to Chrome buttons currently open the Chrome Web Store homepage, not an extension listing. Development installation instructions are available in the documentation.
+BetterScratch is available in the Chrome Web Store: https://chromewebstore.google.com/detail/glahpbgdlhhmejfeekkihekocmminekk. The website's Add to Chrome buttons open this extension listing. Development installation instructions for release ZIPs are also available in the documentation.
 
 ## Privacy and statistics coverage
 

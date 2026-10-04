@@ -23,7 +23,7 @@ npm run dev
 
 Then open http://127.0.0.1:4173.
 
-The three **Add to Chrome** links currently open https://chromewebstore.google.com/ as requested. Replace the `href` on each `.install-link` and update the listing-coming-soon copy when a listing is available.
+All **Add to Chrome** links open the [BetterScratch Chrome Web Store listing](https://chromewebstore.google.com/detail/glahpbgdlhhmejfeekkihekocmminekk). The homepage and documentation include installation instructions for the published extension.
 
 ## Push to GitHub
 
