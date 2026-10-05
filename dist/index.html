@@ -7,10 +7,76 @@
       name="description"
       content="BetterScratch brings themes, remix trees, saved projects, public statistics, and a more personal homepage to Scratch."
     />
+    <link rel="canonical" href="https://betterscratch.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BetterScratch" />
+    <meta property="og:title" content="BetterScratch — Scratch, with a few extras" />
+    <meta property="og:description" content="Themes, remix trees, saved projects, public statistics, and a more personal homepage for Scratch." />
+    <meta property="og:url" content="https://betterscratch.org/" />
+    <meta property="og:image" content="https://betterscratch.org/assets/brand-purple.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="BetterScratch — Scratch, with a few extras" />
+    <meta name="twitter:description" content="Themes, remix trees, saved projects, public statistics, and a more personal homepage for Scratch." />
+    <meta name="twitter:image" content="https://betterscratch.org/assets/brand-purple.png" />
     <meta name="theme-color" content="#8624db" />
     <title>BetterScratch</title>
     <link rel="icon" type="image/png" href="assets/brand-purple.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://betterscratch.org/#website",
+            "url": "https://betterscratch.org/",
+            "name": "BetterScratch",
+            "inLanguage": "en",
+            "about": { "@id": "https://betterscratch.org/#software" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://betterscratch.org/#webpage",
+            "url": "https://betterscratch.org/",
+            "name": "BetterScratch",
+            "isPartOf": { "@id": "https://betterscratch.org/#website" },
+            "mainEntity": { "@id": "https://betterscratch.org/#software" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://betterscratch.org/#software",
+            "name": "BetterScratch",
+            "url": "https://betterscratch.org/",
+            "description": "A free Chrome extension that adds themes, remix trees, saved projects, public statistics, and homepage tools to Scratch.",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Google Chrome",
+            "softwareVersion": "0.2.4",
+            "image": "https://betterscratch.org/assets/brand-purple.png",
+            "installUrl": "https://chromewebstore.google.com/detail/glahpbgdlhhmejfeekkihekocmminekk",
+            "identifier": "glahpbgdlhhmejfeekkihekocmminekk",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": [
+              {
+                "@type": "Person",
+                "name": "-Technify-",
+                "url": "https://scratch.mit.edu/users/-Technify-/"
+              },
+              {
+                "@type": "Person",
+                "name": "viralgoose",
+                "url": "https://scratch.mit.edu/users/viralgoose/"
+              }
+            ],
+            "sameAs": [
+              "https://chromewebstore.google.com/detail/glahpbgdlhhmejfeekkihekocmminekk",
+              "https://github.com/TechnifyScratch/betterscratchwebsite"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="recruitment-banner" href="https://forms.gle/xcfbubxJ4iKV8ofT6" target="_blank" rel="noopener noreferrer">We’re looking for devs. <strong>Apply now ↗</strong></a>
@@ -299,7 +365,7 @@
         An independent extension. Not affiliated with Scratch Foundation or MIT.
       </p>
       <a href="about.html">About the devs</a
-      ><a href="docs.html">Documentation</a><a href="https://forms.gle/xcfbubxJ4iKV8ofT6" target="_blank" rel="noopener noreferrer">Join the team ↗</a><span>Version 0.2.0</span>
+      ><a href="docs.html">Documentation</a><a href="https://forms.gle/xcfbubxJ4iKV8ofT6" target="_blank" rel="noopener noreferrer">Join the team ↗</a><span>Version 0.2.4</span>
     </footer>
     <script src="thumbnail-selection.js" defer></script>
     <script src="project-parade.js" defer></script>
