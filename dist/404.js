@@ -71,8 +71,8 @@
       const checked = selected.flat();
       if (checked.length < cells.length) throw new Error('Not enough inspectable thumbnails');
       projects = checked;
-      draw(); status.textContent='Hover to meet the creators. Click a thumbnail to play.';
-    } catch { status.textContent='Scratch is taking a break. You can still head home, or try again.'; }
+      draw(); status.textContent='Hover to meet the creators or click a thumbnail to play.';
+    } catch { status.textContent='While Scratch is taking a break, you can head home or try again.'; }
     finally {busy=false;refresh.disabled=false;}
   }
   refresh.addEventListener('click',()=>{if(busy) return; batch = (batch + 1 + Math.floor(Math.random()*15)) % 16; void load();});
